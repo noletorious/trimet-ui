@@ -5,7 +5,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "primary" | "secondary" | "outline" | "text";
   size: "large" | "medium" | "small";
-  label: String;
+  label?: String;
 }
 /**
  * Primary UI component for user interaction
@@ -14,8 +14,16 @@ export interface ButtonProps
 const BaseButton = styled.button<ButtonProps>`
   color: ${(props) => (props.variant == "primary" ? "#fff" : "#222")};
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  border-radius: 8px;
+  font-size: ${(props) =>
+    props.size == "small"
+      ? ".8em"
+      : props.size == "medium"
+      ? "1.1em"
+      : props.size == "large"
+      ? "1.4em"
+      : "1em"};
+  padding: 10px 15px;
+  border-radius: 5px;
   border: none;
   background-color: ${(props) =>
     props.variant == "primary" ? "#6db33f" : "#e9e9e9"};
@@ -27,6 +35,11 @@ const BaseButton = styled.button<ButtonProps>`
       box-shadow: none;
     }
   }
+
+  &:focus {
+  }
+  &:active {
+  }
 `;
 
 export const Button = ({
@@ -36,7 +49,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <BaseButton label={label} variant={variant} {...props} size={size}>
+    <BaseButton variant={variant} {...props} size={size}>
       {label}
     </BaseButton>
   );

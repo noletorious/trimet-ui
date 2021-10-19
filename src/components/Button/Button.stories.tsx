@@ -4,11 +4,12 @@ import { Button, ButtonProps } from "./Button";
 import { action } from "@storybook/addon-actions";
 
 const meta = {
-  title: "Example/Button",
+  title: "TriMet/Button",
   component: Button,
   argTypes: {
     label: { control: { type: "text" } },
-    variant: { control: { disable: true } },
+    size: { options: ["small", "medium", "large"], defaultValue: "medium" },
+    onClick: { table: { disable: true } },
   },
 } as Meta;
 
@@ -34,10 +35,18 @@ export const Outline = Template.bind({});
 Outline.args = {
   label: "Outline",
   variant: "outline",
+  onClick: action("Outline click"),
 };
 
 export const Text = Template.bind({});
 Text.args = {
   label: "Text",
   variant: "text",
+  onClick: action("Text click"),
+};
+
+export const LongTextExample = Template.bind({});
+LongTextExample.args = {
+  label: "Oh lordy! This button has a really long text",
+  variant: { table: { disable: true } },
 };
