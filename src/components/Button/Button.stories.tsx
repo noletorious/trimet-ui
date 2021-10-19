@@ -1,40 +1,43 @@
-import React from 'react';
+import * as React from "react";
+import { Meta } from "@storybook/react";
+import { Button, ButtonProps } from "./Button";
+import { action } from "@storybook/addon-actions";
 
-import { Button } from './Button';
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
-  title: 'Example/Button',
+const meta = {
+  title: "Example/Button",
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    label: { control: { type: "text" } },
+    variant: { control: { disable: true } },
   },
-};
+} as Meta;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Button {...args} />;
+export default meta;
+
+const Template = (args: ButtonProps) => <Button {...args} />;
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
-  label: 'Button',
+  label: "Primary",
+  variant: "primary",
+  onClick: action("Primary click"),
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
+  label: "Secondary",
+  variant: "secondary",
+  onClick: action("Secondary click"),
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
+export const Outline = Template.bind({});
+Outline.args = {
+  label: "Outline",
+  variant: "outline",
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const Text = Template.bind({});
+Text.args = {
+  label: "Text",
+  variant: "text",
 };
