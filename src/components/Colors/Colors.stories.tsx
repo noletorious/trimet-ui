@@ -9,7 +9,7 @@ const meta = {
 
 export default meta;
 
-const Template = (args: ColorsProps) => <Colors />;
+const Template = (args: ColorsProps) => <Colors {...args} />;
 
 export const PrimaryColors = Template.bind({});
 PrimaryColors.args = {};

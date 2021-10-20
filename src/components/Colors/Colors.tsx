@@ -1,9 +1,9 @@
 import * as React from "react";
 
 export interface ColorsProps {
-  hex?: String;
+  hex?: string;
 }
 
-export const Colors = () => {
+export const Colors = (hex: ColorsProps) => {
   return <>make a bunch of squares</>;
 };

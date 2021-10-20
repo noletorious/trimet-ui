@@ -15,11 +15,11 @@ const BaseButton = styled.button<ButtonProps>`
   color: ${(props) => (props.variant == "primary" ? "#fff" : "#222")};
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
   font-size: ${(props) =>
-    props.size == "small"
+    props.size === "small"
       ? ".8em"
-      : props.size == "medium"
+      : props.size === "medium"
       ? "1.1em"
-      : props.size == "large"
+      : props.size === "large"
       ? "1.4em"
       : "1em"};
   padding: 10px 15px;
