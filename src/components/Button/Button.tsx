@@ -7,12 +7,9 @@ export interface ButtonProps
   size: "large" | "medium" | "small";
   label?: String;
 }
-/**
- * Primary UI component for user interaction
- */
 
 const BaseButton = styled.button<ButtonProps>`
-  color: ${(props) => (props.variant == "primary" ? "#fff" : "#222")};
+  color: ${(props) => (props.variant === "primary" ? "#fff" : "#222")};
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
   font-size: ${(props) =>
     props.size === "small"
@@ -26,7 +23,7 @@ const BaseButton = styled.button<ButtonProps>`
   border-radius: 5px;
   border: none;
   background-color: ${(props) =>
-    props.variant == "primary" ? "#6db33f" : "#e9e9e9"};
+    props.variant === "primary" ? "#6db33f" : "#e9e9e9"};
 
   // Takes care of sticky hovers on mobile
   @media (any-hover: hover) {

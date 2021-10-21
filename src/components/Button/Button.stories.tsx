@@ -44,9 +44,3 @@ Text.args = {
   variant: "text",
   onClick: action("Text click"),
 };
-
-export const LongTextExample = Template.bind({});
-LongTextExample.args = {
-  label: "Oh lordy! This button has a really long text",
-  variant: { table: { disable: true } },
-};
