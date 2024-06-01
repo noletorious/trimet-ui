@@ -5,9 +5,9 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "paths":{
-      "trimet-ui": ["./lib/main.tsx"]
-    },
+    // "paths":{
+    //   "trimet-ui": ["./lib/main.tsx"]
+    // },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
