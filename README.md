@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# TriMet UI Library
 
 This is the user interface library for TriMet, the public transit system in Portland, Oregon.
 
@@ -6,5 +6,6 @@ This is the user interface library for TriMet, the public transit system in Port
 
 - [x] React
 - [x] Vitejs
-- [ ] Storybook
-- [ ] Tailwindcss
+- [x] Storybook
+- [x] Tailwindcss
+- [ ] Vitest
