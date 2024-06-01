@@ -20,7 +20,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <Button onClick={() => setCount((count) => count + 1)}>
-          Increment
+          yargh! 🦑
         </Button>
         count is {count}
         <p>
